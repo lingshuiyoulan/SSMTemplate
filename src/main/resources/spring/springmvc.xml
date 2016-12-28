@@ -21,18 +21,18 @@
 
     <!--==============基于注解配置映射器============================-->
     <mvc:annotation-driven conversion-service="customConversionService"><!-- validator="validator"-->
-        <!--        &lt;!&ndash;配置Jackson转换器返回数据为json&ndash;&gt;
+                <!--配置Jackson转换器返回数据为json-->
             <mvc:message-converters>
                 <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                     <property name="supportedMediaTypes">
                         <list>
-                            &lt;!&ndash;<value>application/json;charset=UTF-8</value>&lt;!&ndash;返回json对象&ndash;&gt;&ndash;&gt;
-                            <value>text/json;charset=UTF-8</value>&lt;!&ndash;返回json字符串&ndash;&gt;
-                            &lt;!&ndash;<value>text/html; charset=UTF-8</value>&lt;!&ndash;返回json字符串&ndash;&gt;&ndash;&gt;
+                            <!--<value>application/json;charset=UTF-8</value>&lt;!&ndash;返回json对象&ndash;&gt;-->
+                            <value>text/json;charset=UTF-8</value><!--返回json字符串-->
+                            <!--<value>text/html; charset=UTF-8</value>&lt;!&ndash;返回json字符串&ndash;&gt;-->
                         </list>
                     </property>
                 </bean>
-            </mvc:message-converters>-->
+            </mvc:message-converters>
     </mvc:annotation-driven>
 
     <!-- ==============配置拦截器 =========================== -->
