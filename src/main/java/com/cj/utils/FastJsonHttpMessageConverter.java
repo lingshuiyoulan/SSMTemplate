@@ -31,7 +31,7 @@ public class FastJsonHttpMessageConverter extends AbstractHttpMessageConverter<O
 	}
 
 	@Override
-	protected Object readInternal(Class<? extends Object> clazz, HttpInputMessage inputMessage) throws IOException,
+	protected Object readInternal(Class<?> clazz, HttpInputMessage inputMessage) throws IOException,
             HttpMessageNotReadableException {
 
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -81,6 +81,11 @@ public class FastJsonHttpMessageConverter extends AbstractHttpMessageConverter<O
 			}
 
 			bytes = text.getBytes("UTF-8");
+
+			/*//noinspection Since15
+			bytes = text.getBytes(charset);*/
+
+
 		}
 
 		out.write(bytes);

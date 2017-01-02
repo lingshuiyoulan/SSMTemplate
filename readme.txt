@@ -60,7 +60,7 @@ spring-springmvc-mybatis整合 模板
 1.不建议使用hibernate的校验器
 2.mapper.xml文件仍需要在mybatis-config文件中配置
 3.springmvc controller 返回json类型
-    a.可以通过Jackson
+    a.可以通过Jackson  无需任何配置
     b.可以通过fastjson 但需要自定义转换器
     controller返回类型不能是字符串，会出现中文乱码
     可以直接返回Object
