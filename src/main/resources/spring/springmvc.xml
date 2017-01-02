@@ -23,16 +23,16 @@
     <mvc:annotation-driven conversion-service="customConversionService"><!-- validator="validator"-->
 
             <mvc:message-converters>
-                <!--配置Jackson转换器返回数据为json-->
-                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <!--配置Jackson转换器返回数据为json默认无需配置-->
+                <!--<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                     <property name="supportedMediaTypes">
                         <list>
-                            <!--<value>application/json;charset=UTF-8</value>&lt;!&ndash;返回json对象&ndash;&gt;-->
-                            <value>text/json;charset=UTF-8</value><!--返回json字符串-->
-                            <!--<value>text/html; charset=UTF-8</value>&lt;!&ndash;返回json字符串&ndash;&gt;-->
+                            &lt;!&ndash;<value>application/json;charset=UTF-8</value>&lt;!&ndash;返回json对象&ndash;&gt;&ndash;&gt;
+                            <value>text/json;charset=UTF-8</value>&lt;!&ndash;返回json字符串&ndash;&gt;
+                            &lt;!&ndash;<value>text/html; charset=UTF-8</value>&lt;!&ndash;返回json字符串&ndash;&gt;&ndash;&gt;
                         </list>
                     </property>
-                </bean>
+                </bean>-->
                 <!--配置fastjson转换器返回数据为json-->
                 <bean id="fastJsonHttpMessageConverter" class="com.cj.utils.FastJsonHttpMessageConverter">
                     <property name="supportedMediaTypes">
@@ -73,7 +73,7 @@
     </bean>
 
 
-    <!-- =============不过滤静态资源 (RESTful风格需要配置)====== -->
+    <!-- =============不拦截静态资源 (RESTful风格需要配置)====== -->
     <mvc:resources location="/bootstrap/" mapping="/bootstrap/**"/>
     <mvc:resources location="/easyui/" mapping="/easyui/**"/>
 

@@ -16,7 +16,7 @@
     <!--配置前端控制器-->
     <!--普通方式-->
     <servlet>
-        <servlet-name>SpringMVC1</servlet-name>
+        <servlet-name>SpringMVC</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
@@ -24,22 +24,22 @@
         </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>SpringMVC1</servlet-name>
+        <servlet-name>SpringMVC</servlet-name>
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
-    <!--    &lt;!&ndash;RESTful风格&ndash;&gt;
-        <servlet>
-            <servlet-name>SpringMVC2</servlet-name>
-            <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-            <init-param>
-                <param-name>contextConfigLocation</param-name>
-                <param-value>classpath:spring/springmvc.xml</param-value>
-            </init-param>
-        </servlet>
-        <servlet-mapping>
-            <servlet-name>SpringMVC2</servlet-name>
-            <url-pattern>/</url-pattern>
-        </servlet-mapping>-->
+    <!--RESTful风格-->
+    <!--<servlet>
+        <servlet-name>SpringMVC2</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring/springmvc.xml</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SpringMVC2</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>-->
 
     <!--解决post中文乱码-->
     <filter>

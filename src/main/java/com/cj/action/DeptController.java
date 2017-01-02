@@ -35,14 +35,15 @@ public class DeptController {
         String res = "{\"name\":\"";
         res += file.getOriginalFilename();
         res += "\"}";
-        Object parse = JSON.parse(res);
-        return parse;
+        return JSON.parse(res);
     }
 
 
+    //测试前先在web.xml中打开restful配置
     @RequestMapping("/restful/{deptno}/{dname}/{loc}")
     @ResponseBody
     public Dept restFul(@PathVariable("deptno") Integer deptno, @PathVariable("dname") String dname, @PathVariable("loc") String loc, Dept dept) {
+        System.out.println(dept);
         return dept;
     }
 }

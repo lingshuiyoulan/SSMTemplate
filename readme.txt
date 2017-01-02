@@ -64,6 +64,9 @@ spring-springmvc-mybatis整合 模板
     b.可以通过fastjson 但需要自定义转换器
     controller返回类型不能是字符串，会出现中文乱码
     可以直接返回Object
+4.restful风格配置
+    a.web.xml中配置
+    b.springMVC中配置不拦截静态资源
 
 使用方法
 1、
