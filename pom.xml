@@ -96,6 +96,13 @@
       <version>2.8.5</version>
     </dependency>
 
+    <!--fastjson-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.21</version>
+    </dependency>
+
     <!--SpringMVC文件上传-->
     <dependency>
       <groupId>commons-fileupload</groupId>
@@ -151,7 +158,7 @@
       </resource>
     </resources>
 
-    <!-- 用来自动生成MyBatis -->
+    <!-- 以maven方式自动生成MyBatis -->
     <plugins>
       <plugin>
         <groupId>org.mybatis.generator</groupId>

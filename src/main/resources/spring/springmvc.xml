@@ -21,14 +21,23 @@
 
     <!--==============基于注解配置映射器============================-->
     <mvc:annotation-driven conversion-service="customConversionService"><!-- validator="validator"-->
-                <!--配置Jackson转换器返回数据为json-->
+
             <mvc:message-converters>
+                <!--配置Jackson转换器返回数据为json-->
                 <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                     <property name="supportedMediaTypes">
                         <list>
                             <!--<value>application/json;charset=UTF-8</value>&lt;!&ndash;返回json对象&ndash;&gt;-->
                             <value>text/json;charset=UTF-8</value><!--返回json字符串-->
                             <!--<value>text/html; charset=UTF-8</value>&lt;!&ndash;返回json字符串&ndash;&gt;-->
+                        </list>
+                    </property>
+                </bean>
+                <!--配置fastjson转换器返回数据为json-->
+                <bean id="fastJsonHttpMessageConverter" class="com.cj.utils.FastJsonHttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>text/json;charset=UTF-8</value><!-- 避免IE出现下载JSON文件的情况 -->
                         </list>
                     </property>
                 </bean>

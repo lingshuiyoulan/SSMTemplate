@@ -1,5 +1,7 @@
 package com.cj.action;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.cj.domain.Dept;
 import com.cj.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +31,12 @@ public class DeptController {
 
     @RequestMapping("/fun")
     @ResponseBody
-    public String fun(MultipartFile file) {
+    public Object fun(MultipartFile file) {
         String res = "{\"name\":\"";
         res += file.getOriginalFilename();
         res += "\"}";
-        return res;
+        Object parse = JSON.parse(res);
+        return parse;
     }
 
 
