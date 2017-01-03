@@ -82,6 +82,17 @@ spring-springmvc-mybatis整合 模板
     a.web.xml中配置
     b.springMVC中配置不拦截静态资源
 
+5、通过命令行生成实体类，dao和mapper.xml文件（SQL语句）
+    1）、 将mybatis-generator-core.jar放在generatorConfig.xml同一目录下
+         在该目录下打开命令行（shift+右键）（前提：已经配置好JDK的path），执行如下命令：
+         java -jar mybatis-generator-core-1.3.5.jar -configfile generatorConfig.xml -overwrite
+         生成的文件路径若整不明白则用绝对路径(在generatorConfig.xml中指定)
+
+    2）、 使用mybatis-generator插件
+          先创建包名，将generatorConfig.xml放置在resources目录下，右键运行Ran As MyBatisGenerator
+          强烈建议使用
+
+    3）、 maven项目的话可以添加插件 使用maven命令执行
 使用方法
 1、
     <!-- 加载Spring容器 -->
