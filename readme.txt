@@ -1,36 +1,50 @@
 spring-springmvc-mybatis整合 模板
 
 所用技术
+1、工具类
+    ①日志记录 log4j 1.2.17
+    ②单元测试
+        junit 4.12
+        hamcrest-core-1.3
+    ③json处理 fastjson 1.2.21
 
-1、日志记录 log4j 1.2.17
-2、单元测试 junit 4.12
+2、数据源相关
+    ①数据源 DRUID  1.0.26
+    ②mysql驱动 mysql 5.1.38
 
-3、数据源 DRUID  1.0.26
-4、mysql驱动 mysql 5.1.38
+3、mybatis相关
+    ①mybatis  3.4.1
+    ②mybatis-spring 1.3.0
 
-5、mybatis  3.4.1
-6、mybatis-spring 1.3.0
+4、spring 相关 4.3.4.RELEASE
+    ①spring-core
+    ②spring-context
+    ③spring-beans
+    ④spring-expression
+    ⑤spring jdbc
+    ⑥spring-tx
+    ⑦spring-aop
+    ⑧aspectj spring aop注解支持
+        aspectjrt 1.8.9
+        aspectjweaver 1.8.9
+    ⑨spring-web
 
-7、spring context 4.3.4.RELEASE
-8、spring jdbc
-9、spring web
-10、aspectj spring aop注解支持
-    aspectjrt 1.8.9
-    aspectjweaver 1.8.9
-    
-11、spring webmvc
-12、jstl标准标签库
-    jstl 1.2
-    standard 1.1.2
-13、mvc json支持
-    jackson-databind  2.8.5
-14、mvc 文件上传支持
-    commons-fileupload  1.3.1
-    commons-io          2.4
-15、mvc 校验
-    hibernate-validator 5.4.0.Beta1
-    org.jboss.logging   3.3.0.Final
-    javax.validation validation-api 1.1.0.Final
+5、spring webmvc相关
+    ①spring-mvc
+    ②jstl标准标签库
+        jstl 1.2
+        standard 1.1.2
+    ③mvc json支持
+        jackson-databind  2.8.5
+        jackson-annotations 2.8.0
+        jackson-core 2.8.5
+    ④mvc 文件上传支持
+        commons-fileupload  1.3.1
+        commons-io          2.4
+    ⑤mvc 校验(一般不用)
+        hibernate-validator 5.4.0.Beta1
+        org.jboss.logging   3.3.0.Final
+        javax.validation validation-api 1.1.0.Final
   
     
 整合步骤：

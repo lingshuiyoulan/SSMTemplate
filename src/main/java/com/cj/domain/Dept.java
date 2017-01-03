@@ -40,4 +40,13 @@ public class Dept {
     public void setLoc(String loc) {
         this.loc = loc == null ? null : loc.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Dept{" +
+                "deptno=" + deptno +
+                ", dname='" + dname + '\'' +
+                ", loc='" + loc + '\'' +
+                '}';
+    }
 }
