@@ -1,7 +1,6 @@
 package com.cj.action;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.cj.domain.Dept;
 import com.cj.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;

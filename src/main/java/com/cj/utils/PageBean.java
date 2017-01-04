@@ -3,16 +3,30 @@ package com.cj.utils;
 import java.io.Serializable;
 import java.util.List;
 
-public class PageBean<T> implements Serializable{
-    //当前的页数
+public class PageBean<T> implements Serializable {
+    /**
+     * 当前的页数
+     */
     private Integer curPage;
-    //总页数 需要计算出来（不用set）
+
+    /**
+     * 总页数 需要计算出来（不用set）
+     */
     private Integer amountPages;
-    //总记录数
+
+    /**
+     * 总记录数
+     */
     private Integer totalRecords;
-    //每页显示的条数
+
+    /**
+     * 每页显示的条数默认10条
+     */
     private Integer pageSize = 10;
-    //每页显示的数据
+
+    /**
+     * 每页显示的数据
+     */
     private List<T> data;
 
     public Integer getCurPage() {
@@ -33,7 +47,7 @@ public class PageBean<T> implements Serializable{
 
     public void setTotalRecords(Integer totalRecords) {
         this.totalRecords = totalRecords;
-        amountPages=totalRecords%pageSize==0?totalRecords/pageSize:totalRecords/pageSize+1;//计算出总页数
+        amountPages = totalRecords % pageSize == 0 ? totalRecords / pageSize : totalRecords / pageSize + 1;//计算出总页数
     }
 
     public Integer getPageSize() {
