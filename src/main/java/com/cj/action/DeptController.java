@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.File;
+import java.io.IOException;
+
 /**
  * Created by lanling on 2016/12/14.
  */
@@ -33,7 +36,15 @@ public class DeptController {
     @ResponseBody
     public Object fun(MultipartFile file) {
         String res = "{\"name\":\"";
-        res += file.getOriginalFilename();
+        String originalFilename = file.getOriginalFilename();
+        String fileSuffix = originalFilename.substring(originalFilename.lastIndexOf("."), originalFilename.length());
+        File path = new File("d:/test"+fileSuffix);
+        try {
+            file.transferTo(new File(path.getPath()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        res += originalFilename;
         res += "\"}";
         return JSON.parse(res);
     }
