@@ -10,6 +10,13 @@
 
     <dependencies>
 
+        <!--======================================javaee相关==============================-->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+        </dependency>
+
         <!--======================================工具类相关==============================-->
         <!-- 日志记录(在控制台输出MyBatis的SQL语句) -->
         <dependency>
