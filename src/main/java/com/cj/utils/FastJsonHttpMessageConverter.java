@@ -51,6 +51,9 @@ public class FastJsonHttpMessageConverter extends AbstractHttpMessageConverter<O
         }
 
         byte[] bytes = baos.toByteArray();
+
+        baos.close();
+
         if (charset == UTF8) {
             return JSON.parseObject(bytes, clazz);
         } else {
@@ -86,6 +89,8 @@ public class FastJsonHttpMessageConverter extends AbstractHttpMessageConverter<O
             bytes = text.getBytes(charset);*/
         }
         out.write(bytes);
+        out.flush();
+        out.close();
     }
 
 }
