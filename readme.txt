@@ -93,6 +93,10 @@ spring-springmvc-mybatis整合 模板
           强烈建议使用
 
     3）、 maven项目的话可以添加插件 使用maven命令执行
+
+6、springMVC支持文件上传
+    id="multipartResolver"不能省略
+
 使用方法
 1、
     <!-- 加载Spring容器 -->
