@@ -51,13 +51,15 @@
     <!--=====================配置SqlSessionFactory=============-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
+        <!--<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>&lt;!&ndash;此种扫描需要mybatis配置文件&ndash;&gt;-->
+        <property name="mapperLocations" value="classpath:com/cj/mapping/*.xml"/><!--此种方式不在需要mybatis配置文件-->
     </bean>
 
-    <!--====================配置自动扫描mapper.xml文件=============-->
+    <!--====================配置自动扫描mapper.xml文件对应的接口==-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.cj.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+
     </bean>
 
     <!--=====================配置AOP============================-->

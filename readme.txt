@@ -56,7 +56,7 @@ spring-springmvc-mybatis整合 模板
 
 3、spring整合mybatis
     3.1 注入sqlSessionFactory(事先创建好mybatis配置文件： mybatis-config.xml)
-    3.2 自动扫描mapper.xml文件
+    3.2 自动扫描mapper.xml文件 见注意事项
     3.3 spring管理mybatis的事务
     3.4 配置log4j.properties(不是必须的)
 
@@ -72,7 +72,10 @@ spring-springmvc-mybatis整合 模板
 
 注意事项
 1.不建议使用hibernate的校验器
-2.mapper.xml文件仍需要在mybatis-config文件中配置
+2.mybatis整合方式：配置sqlSessionFactory时有两种方式
+    ①配置configLocation属性：仍需要mybatis-config配置文件，其中扫描mapper.xml文件
+    ②配置mapperLocations属性：不需要mybatis-config配置文件，其值为mapper文件的位置，可用通配符
+        可以删除resources下的mybatis文件夹
 3.springmvc controller 返回json类型
     a.可以通过Jackson  无需任何配置
     b.可以通过fastjson 但需要自定义转换器
@@ -121,7 +124,8 @@ spring-springmvc-mybatis整合 模板
     <!--=====================配置SqlSessionFactory=============-->
        <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
            <property name="dataSource" ref="dataSource"/>
-           <property name="configLocation" value="classpath:mybatis-config.xml"/>
+           <!--<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>&lt;!&ndash;此种扫描需要mybatis配置文件&ndash;&gt;-->
+           <property name="mapperLocations" value="classpath:com/cj/mapping/*.xml"/><!--此种方式不在需要mybatis配置文件-->
        </bean>
 3.2
     <!--====================配置自动扫描mapper.xml文件===========-->
