@@ -1,5 +1,4 @@
 package com.cj.service.impl;
-
 import com.cj.dao.DeptDao;
 import com.cj.domain.Dept;
 import com.cj.service.DeptService;

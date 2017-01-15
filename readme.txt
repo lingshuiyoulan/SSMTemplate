@@ -28,6 +28,7 @@ spring-springmvc-mybatis整合 模板
         aspectjrt 1.8.9
         aspectjweaver 1.8.9
     ⑨spring-web
+    ⑩spring-test
 
 5、spring webmvc相关
     ①spring-mvc
@@ -66,7 +67,10 @@ spring-springmvc-mybatis整合 模板
     4.3 自动扫描controller(自动扫描组件)
     4.4 配置视图解析器 InternalResourceViewResolver
     4.5 支持文件上传
-
+5、spring整合junit
+    5.1加入spring-test.jar包
+    5.2编写测试工具类SpringJunitTestUtil
+    5.3其他测试类都继承测试工具类，就会自动注入需要的dao和service
 
 使用方法及注意事项
 

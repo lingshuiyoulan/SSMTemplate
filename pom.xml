@@ -120,6 +120,12 @@
             <artifactId>aspectjrt</artifactId>
             <version>1.8.9</version>
         </dependency>
+        <!-- Spring test-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>4.3.4.RELEASE</version>
+        </dependency>
 
         <!--======================================springmvc相关===============================-->
         <!-- Spring Web-->
